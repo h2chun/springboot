@@ -23,7 +23,7 @@
     - Entity와 Repository는 함께 위치해야 함.
     - 도메인패키지에 관리
 2. Controller, Dto, Service 생성
-  - 패키지로 구분하고 각 패키지 안에 클래스파일 생성
-  - Entity클래스를 Requst/Response 클래스로 사용하지 말고 Dto를 사용
-  - @RequuiredArgsConstrucor 사용 권장
-  - Dto, Service, Controller 순서로 작업하는게 바른 순서일텐데 책에서는 그렇지 않아서 아쉽.
+    - 패키지로 구분하고 각 패키지 안에 클래스파일 생성
+    - Entity클래스를 Requst/Response 클래스로 사용하지 말고 Dto를 사용
+    - @RequuiredArgsConstrucor 사용 권장
+    - Dto, Service, Controller 순서로 작업하는게 바른 순서일텐데 책에서는 그렇지 않아서 아쉽.
