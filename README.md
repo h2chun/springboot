@@ -18,10 +18,10 @@
 
 ### 03장 스프링 부트에서 JPA로 데이터베이스 다뤄보자
 1. Entity, Repository 생성
-  - Entity에 Setter를 만들지 않고 @Builder를 사용
-  - Repository는 Dao와 같은 의미로 DB Layer 접근자.
-  - Entity와 Repository는 함께 위치해야 함.
-  - 도메인패키지에 관리
+    - Entity에 Setter를 만들지 않고 @Builder를 사용
+    - Repository는 Dao와 같은 의미로 DB Layer 접근자.
+    - Entity와 Repository는 함께 위치해야 함.
+    - 도메인패키지에 관리
 2. Controller, Dto, Service 생성
   - 패키지로 구분하고 각 패키지 안에 클래스파일 생성
   - Entity클래스를 Requst/Response 클래스로 사용하지 말고 Dto를 사용
