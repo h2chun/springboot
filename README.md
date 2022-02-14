@@ -27,3 +27,9 @@
     - Entity클래스를 Requst/Response 클래스로 사용하지 말고 Dto를 사용
     - @RequuiredArgsConstrucor 사용 권장
     - Dto, Service, Controller 순서로 작업하는게 바른 순서일텐데 책에서는 그렇지 않아서 아쉽.
+3. 게시판 글 등록/수정/조회 서비스
+    - @RequiredArgsConstructor 사용 추천
+    - JPA의 영속성 컨텍스트. 터티체킹
+4. JPA Auditing 사용.
+    - insert문에 sysdate를 넣는 것과 같은 효과
+    - 관계형 데이터베이스를 객체지향적으로 관리하기 위해 나온 방법인듯 함.
