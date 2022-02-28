@@ -6,6 +6,7 @@
 - [02장 TDD 및 테스트코드 작성](#02장-TDD-및-테스트코드-작성)
 - [03장 스프링 부트에서 JPA로 데이터베이스 다뤄보자](#03장-스프링-부트에서-JPA로-데이터베이스-다뤄보자)
 - [04장 머스테치로 화면 구성하기](#04장-머스테치로-화면-구성하기)
+- [05장 스프링 시큐리티와 OAuth 2.0으로 로그인 기능 구현하기](#05장-스프링-시큐리티와-OAuth-2.0으로-로그인-기능-구현하기)
 
 ---
 
@@ -54,3 +55,22 @@
     - @Transactional(readOnly=true)를 사용하면 조회 속도가 개선됨.
 5. 게시글 수정, 삭제 화면 만들기
     - 특별한 내용없음. 그냥 수정, 삭제 버튼 만들고 서비스 만들고 동작기능 만들고 끝.
+
+### 05장 스프링 시큐리티와 OAuth 2.0으로 로그인 기능 구현하기
+1. 스프링 시큐리티와 스프링 시큐리티 Oauth2 클리이언트
+    - 스프링 부트 2.0 부터 OAuth 설정이 좋아졌다는 설명.
+2. 구글 서비스 등록
+    - https://console.cloud.google.com 에서 구글 서비스 등록
+    - 구글 서비스 등록하는 방법은 책에 설명과 실제 등록화면이 달라서 그냥 검색해서 등록하는 편이 좋아보임.
+    - src/main/resources 디렉토리에 application-oauth.properties 파일 생성
+    - 구글 글라인언트 보안 정보가 깃허브에 올라갈 수 있으니 .gitignore에 application-oauth.properties 등록
+3. 구글 로그인 연동하기
+    - 로그인에 사용할 서버 프로그램 작성.
+    - User Entity 작성 (springboot/domain/user 패키지)
+    - 각 사용자 권한을 관리할 Enum 클래스 작성(Role).(springboot/domain/user 패키지)
+    - UserRepository 작성 (springboot/domain/user 패키지)
+    - 스프링 시큐리티 설정을 위한 build.gradle에 관련 의존성 추가
+    - 시큐리티 관련 클래스를 모아두기 위한 config.auth 패키지 생성
+    - SecurityConfig 작성 -> 설정 활성화, URL별 화면 권한, 로그인/아웃 관련 설정등
+    - CustomOAuth2UserService 작성 -> 로그인 이후 가져온 사용자 정보를 기반으로 가입 및 정보수정, 세션 저장 등의 기능을 지원.
+    - OAuthAttributes, SessionUser 클래스 생성. (Dto 패키지 생성하여 생성)
